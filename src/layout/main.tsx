@@ -17,7 +17,7 @@ export default function Main ({}) {
         <p className="text-blue-700 font-bold">About Us</p>
         <h2 className="w-1/2 capitalize text-5xl font-bold my-4 max-lg:w-full">{`We're delivering only exceptional quality work`}</h2>
         <div className="flex items-center justify-between gap-6 max-lg:w-full max-lg:flex-col">
-          <Image className="w-1/2 rounded-xl duration-500 max-lg:w-full	hover:scale-95" src={section_one} alt="ENTER ALT"  width={500} height={500}/>
+          <Image className="w-1/2 rounded-xl duration-500 max-lg:w-full	hover:scale-95" src={section_one} alt="dynamics A5 logo"  width={500} height={500} loading={'lazy'}/>
           <div className="flex flex-col w-1/2 gap-y-4 max-lg:w-full ">
             <p className="w-full max-lg:w-full">
                 Welcome to A5 Solution, a Ukrainian-based company specializing in Dynamics 365 solutions and consulting services. Our team of 5 skilled professionals is dedicated to helping businesses of all sizes streamline their operations, increase efficiency, and achieve their goals.
@@ -39,19 +39,19 @@ export default function Main ({}) {
       </div>
       <div className="flex flex-wrap gap-20 justify-between">
         <div className="w-1/5 drop-shadow-2xl border-solid duration-500 border-2 flex  gap-y-3 py-5 flex-col items-center justify-center rounded-xl  bg-white hover:scale-95 hover:border-sky-500 max-md:w-full max-xl:w-1/3">
-          <Image className="w-1/4" src={photos.communication} alt="ENTER HERE" width={100} height={100}/>
+          <Image className="w-1/4" src={photos.communication} alt="DynamicsA5 communication" width={100} height={100} loading={'lazy'}/>
           <h3 className="w-1/2 text-center text">Consulted more than 100 clients</h3>
         </div>
         <div className="w-1/5 drop-shadow-2xl border-solid duration-500 border-2 flex gap-y-3 py-5 flex-col items-center justify-center rounded-xl bg-white hover:scale-95  hover:border-sky-500 max-md:w-full max-xl:w-1/3">
-          <Image className="w-1/4" src={photos.apps} alt="ENTER HERE" width={100} height={100}/>
+          <Image className="w-1/4" src={photos.apps} alt="count of launched projects by DynamicsA5" width={100} height={100} loading={'lazy'}/>
           <h3 className="w-1/2 text-center text">Launced around 30 projects</h3>
         </div>
         <div className="w-1/5 drop-shadow-2xl border-solid duration-500 border-2 flex gap-y-3 py-5 flex-col items-center justify-center rounded-xl bg-white hover:scale-95  hover:border-sky-500 max-md:w-full max-xl:w-1/3">
-          <Image className="w-1/4" src={photos.worldwide} alt="ENTER HERE" width={100} height={100}/>
+          <Image className="w-1/4" src={photos.worldwide} alt="we are working worldwide company" width={100} height={100} loading={'lazy'}/>
           <h3 className="w-1/2 text-center text">Working worldwide</h3>
         </div>
         <div className="w-1/5 drop-shadow-2xl flex border-solid duration-500 border-2 gap-y-3 py-5 flex-col items-center justify-center rounded-xl bg-white hover:scale-95 hover:border-sky-500 max-md:w-full max-xl:w-1/3">
-          <Image className="w-1/4" src={photos.team} alt="ENTER HERE" width={100} height={100}/>
+          <Image className="w-1/4" src={photos.team} alt="only professionals in DynamicsA5" width={100} height={100} loading={'lazy'}/>
           <h3 className="w-1/2 text-center text">Proffesional team</h3>
         </div>
       </div>
@@ -63,13 +63,13 @@ export default function Main ({}) {
         <div className="flex items-center justify-between gap-6 max-lg:flex-col-reverse">
           <div className="w-1/2 flex gap-y-10 flex-col max-lg:w-full">
           <p>
-          At A5 Solution, we take pride in our ability to deliver customized Dynamics 365 solutions and expert consulting services that meet the unique needs of our clients. Our team of 5 highly skilled professionals brings a wealth of knowledge and expertise to every project, and we are committed to providing personalized service and building long-term relationships with our clients.
+          At A5 Solution, we take pride in our ability to deliver customized Dynamics 365 solutions and expert consulting services that meet the unique needs of our clients. Most projects were dedicated to Dynamics 365 for Finance, Dynamics F&O. Based on our experience and background with Dynamics AX 2012. And good skills in both X++ and Power Platform development. Our team of 5 highly skilled professionals brings a wealth of knowledge and expertise to every project, and we are committed to providing personalized service and building long-term relationships with our clients.
           </p>
           <p>
           Whether you need help with implementation, customization, or ongoing support, we have the skills and resources to get the job done. We understand that every business is different, and we take the time to understand your unique needs and develop solutions that are tailored to your specific requirements. At A5 Solution, we are dedicated to helping our clients optimize their operations, increase efficiency, and achieve their goals.
           </p>
         </div>
-        <Image className="w-1/2 rounded-xl duration-500 max-lg:w-full	hover:scale-95" src={team_photo} alt="ENTER ALT"  width={500} height={500}/>
+        <Image className="w-1/2 rounded-xl duration-500 max-lg:w-full	hover:scale-95" src={team_photo} alt="key features that describe us"  width={500} height={500} loading={'lazy'}/>
         </div>
       </div>
     </section>
@@ -78,35 +78,35 @@ export default function Main ({}) {
       <h2 className="w-1/2 capitalize text-5xl font-bold my-4">Provided Servise</h2>
       <div className="flex flex-wrap justify-between md:gap-10 lg:gap-20">
         <div className="w-1/5 cursor-pointer group max-md:w-1/2 max-sm:w-full py-10 bg-sky-500  drop-shadow-2xl text-white border-solid duration-500  border-2 flex gap-y-3 flex-col items-center justify-center rounded-xl hover:scale-95  hover:border-sky-500">
-          <Image className="w-1/4 group-hover:scale-125 group-hover:-translate-y-5 duration-500" src={photos.sales} alt="ENTER HERE" />
+          <Image className="w-1/4 group-hover:scale-125 group-hover:-translate-y-5 duration-500" src={photos.sales} alt="sales management" loading={'lazy'}/>
           <h3 className="w-1/2 text-center text">Sales Management</h3>
         </div>
         <div className="w-1/5 cursor-pointer group max-md:w-1/2 max-sm:w-full py-10 bg-sky-500  drop-shadow-2xl text-white border-solid duration-500 border-2 flex gap-y-3 flex-col items-center justify-center rounded-xl hover:scale-95  hover:border-sky-500">
-          <Image className="w-1/4 group-hover:scale-125 group-hover:-translate-y-5 group-hover:rotate-180 duration-500" src={photos.customer} alt="ENTER HERE" />
+          <Image className="w-1/4 group-hover:scale-125 group-hover:-translate-y-5 group-hover:rotate-180 duration-500" src={photos.customer} alt="customer service provided" loading={'lazy'}/>
           <h3 className="w-1/2 text-center text">Customer Service</h3>
         </div>
         <div className="w-1/5 cursor-pointer group max-md:w-1/2 max-sm:w-full py-10 bg-sky-500  drop-shadow-2xl text-white border-solid duration-500 border-2 flex gap-y-3 flex-col items-center justify-center rounded-xl hover:scale-95  hover:border-sky-500">
-          <Image className="w-1/4 group-hover:scale-125 group-hover:-translate-y-5 duration-500" src={photos.field_service} alt="ENTER HERE" />
+          <Image className="w-1/4 group-hover:scale-125 group-hover:-translate-y-5 duration-500" src={photos.field_service} alt="field service providing by our team" loading={'lazy'}/>
           <h3 className="w-1/2 text-center text">Field Service</h3>
         </div>
         <div className="w-1/5 cursor-pointer group max-md:w-1/2 max-sm:w-full py-10 bg-sky-500  drop-shadow-2xl text-white border-solid duration-500 border-2 flex gap-y-3 flex-col items-center justify-center rounded-xl hover:scale-95  hover:border-sky-500">
-          <Image className="w-1/4 scale-y-90 group-hover:scale-y-125 group-hover:-translate-y-5 duration-500" src={photos.project} alt="ENTER HERE" />
+          <Image className="w-1/4 scale-y-90 group-hover:scale-y-125 group-hover:-translate-y-5 duration-500" src={photos.project} alt="we automizze projects" loading={'lazy'}/>
           <h3 className="w-1/2 text-center text">Project Service Automation</h3>
         </div>
         <div className="w-1/5 cursor-pointer group max-md:w-1/2 max-sm:w-full py-10 bg-sky-500  drop-shadow-2xl text-white border-solid duration-500 border-2 flex gap-y-3 flex-col items-center justify-center rounded-xl hover:scale-95  hover:border-sky-500">
-          <Image className="w-1/4 group-hover:scale-125 group-hover:-translate-y-1 duration-500" src={photos.marketing} alt="ENTER HERE" />
+          <Image className="w-1/4 group-hover:scale-125 group-hover:-translate-y-1 duration-500" src={photos.marketing} alt="marketing features" loading={'lazy'}/>
           <h3 className="w-1/2 text-center text">Marketing</h3>
         </div>
         <div className="w-1/5 cursor-pointer group max-md:w-1/2 max-sm:w-full py-10 bg-sky-500  drop-shadow-2xl text-white border-solid duration-500 border-2 flex gap-y-3 flex-col items-center justify-center rounded-xl hover:scale-95  hover:border-sky-500">
-          <Image className="w-1/4 cursor-pointer group-hover:scale-125  group-hover:-translate-y-5 group-hover:-skew-y-6 duration-500" src={photos.perfomance} alt="ENTER HERE" />
+          <Image className="w-1/4 cursor-pointer group-hover:scale-125  group-hover:-translate-y-5 group-hover:-skew-y-6 duration-500" src={photos.perfomance} alt="finances are or main specialization" loading={'lazy'}/>
           <h3 className="w-1/2 text-center text">Finance and Operations</h3>
         </div>
         <div className="w-1/5 cursor-pointer group max-md:w-1/2 max-sm:w-full py-10 bg-sky-500  drop-shadow-2xl text-white border-solid duration-500 border-2 flex gap-y-3 flex-col items-center justify-center rounded-xl hover:scale-95  hover:border-sky-500">
-          <Image className="w-1/4 group-hover:scale-125 group-hover:-translate-y-5 group-hover:-skew-y-6 duration-500" src={photos.retail} alt="ENTER HERE" />
+          <Image className="w-1/4 group-hover:scale-125 group-hover:-translate-y-5 group-hover:-skew-y-6 duration-500" src={photos.retail} alt="retail features" loading={'lazy'}/>
           <h3 className="w-1/2 text-center text">Retail</h3>
         </div>
         <div className="w-1/5 cursor-pointer group max-md:w-1/2 max-sm:w-full py-10 bg-sky-500  drop-shadow-2xl text-white border-solid duration-500 border-2 flex gap-y-3 flex-col items-center justify-center rounded-xl hover:scale-95  hover:border-sky-500">
-          <Image className="w-1/4 group-hover:scale-125 group-hover:-translate-y-5 duration-500" src={photos.consulting} alt="ENTER HERE" />
+          <Image className="w-1/4 group-hover:scale-125 group-hover:-translate-y-5 duration-500" src={photos.consulting} alt="HR management" loading={'lazy'}/>
           <h3 className="w-1/2 text-center text">Human resource management</h3>
         </div>
       </div>

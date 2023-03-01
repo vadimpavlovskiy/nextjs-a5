@@ -12,7 +12,7 @@ export default function Header () {
         <header className="w-screen flex flex-col justify-center h-screen bg-cover bg-[url('../image/header-back.jpg')] bg-blend-darken m-0">
     <div className="flex justify-center w-full p-10 ">
       <nav className="navigation bg-white fixed top-0 items-center border-1 duration-300	text-black drop-shadow-2xl w-full flex px-10 py-6 justify-between z-10 hover:rounded-b-lg">
-        <Image width={12} height={12} className="w-12 h-12 duration-500 hover:rounded-xl hover:border-1 border-blue-500" src={logo} alt="a5 Logo" />
+        <Image width={12} height={12} className="w-12 h-12 duration-500 hover:rounded-xl hover:border-1 border-blue-500" src={logo} alt="a5 Logo" loading={"lazy"}/>
         <div className="flex gap-x-2 max-md:hidden max-md:flex-col  max-md:rounded-xl max-md:w-full">
         <ul className="flex list-none gap-x-4 max-md:flex-col max-md:gap-y-5">
           <li className="transition-transform decoration-white ease-in-out delay-150 hover:underline hover:decoration-blue-400 decoration-2"><Link href="/">Services</Link></li>
@@ -26,7 +26,7 @@ export default function Header () {
       </div>
       <div className="hidden max-md:block">
         <>
-        <Drawer className="text-3xl" opened={opened} onClose={() => setOpened(false)} title={ <Image width={12} height={12} className="w-12 h-12 duration-500 hover:rounded-xl hover:border-1 border-blue-500" src={logo} alt="a5 Logo" />} padding={'sm'} size='sm'>
+        <Drawer className="text-3xl" opened={opened} onClose={() => setOpened(false)} title={ <Image width={12} height={12} className="w-12 h-12 duration-500 hover:rounded-xl hover:border-1 border-blue-500" src={logo} alt="a5 Logo" loading={"lazy"}/>} padding={'sm'} size='sm'>
 
             <ul className="flex justify-center list-none gap-x-4 max-md:flex-col max-md:gap-y-5">
           <li className="transition-transform decoration-white ease-in-out delay-150 hover:underline hover:decoration-blue-400 decoration-2 text-3xl"><Link href="/">Services</Link></li>
