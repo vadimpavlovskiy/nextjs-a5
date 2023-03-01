@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://dynamicsa5.com/
+
+# Sitemaps
+Sitemap: https://dynamicsa5.com/sitemap.xml
