@@ -33,4 +33,6 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+.eslintrc.json
 next-env.d.ts
+client.ts
