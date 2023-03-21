@@ -35,7 +35,7 @@ export default function Footer() {
       <ul className="flex flex-col gap-y-4">
         <li className="cursor-pointer "><Link href={'#'}>Sitemap</Link></li>
         <li className="cursor-pointer "><Link href={'#'}>Privacy</Link></li>
-        <li className="cursor-pointer "><Link href={'#'}>LinkedIn</Link></li>
+        <li className="cursor-pointer "><Link href={'/articles'}>Blog</Link></li>
       </ul>
     </div>
   </div>

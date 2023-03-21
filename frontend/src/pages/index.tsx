@@ -1,3 +1,4 @@
+
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
@@ -6,10 +7,12 @@ import Header from '@/layout/header'
 import Main from '@/layout/main'
 import Footer from '@/layout/footer'
 import header_image from '../image/header-back.jpg';
+import client from 'client'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Home({articles}:any) {
+  console.log(articles);
   
   return (
     <>
@@ -20,13 +23,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header isCoverImageVisiable={true} image_url={header_image.src} header_text='WELCOME TO A5 SOLUTION!' paragraph_text='BEST DYNAMICS AGENCY'/>
-      <Main />
+      <Main articles={articles} />
     </>
   )
 }
-export async function getStaticProps() {
+export async function getStaticProps(context:any) {
+  const articles = await client.fetch(`
+  *[_type == 'post']`)
   return {
-    props: {}, // will be passed to the page component as props
+    props: {
+      articles,
+    }
   }
 }
-

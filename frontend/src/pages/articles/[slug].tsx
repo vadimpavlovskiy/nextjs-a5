@@ -26,14 +26,19 @@ const inter = Inter({
 const myArticleView = {
   types: {
     image: ({value}:any) => {
-     return (<Image key={value._key} style={{width: '50%', borderRadius: 12}} width={800} height={800} alt={'twenty'} src={builder.image(value).url()} />)},
+     return (<Image key={value._key} className={'my-2'} style={{width: '50%', borderRadius: 12}} width={800} height={800} alt={'twenty'} src={builder.image(value).url()} />)},
   },
   block: {
     h1: ({children}:any) => (<h1 id={slug(children[0])} className={`${epilogue.className} text-4xl pb-4 font-bold`}>{children}</h1>),
     h2: ({children}:any) => (<h2 id={slug(children[0])} className={`${epilogue.className} text-2xl py-4 font-bold`}>{children}</h2>),
-    p: ({children}:any) => {return (<p className={`${inter.className} text-xl`}>{children}</p>)},
-    ul: ({children}:any) => (<ul className={`${inter.className}`}>{children}</ul>)
+    p: ({children}:any) => {return (<p className={`${inter.className} py-2 text-xl`}>{children}</p>)},
+    ul: ({children}:any) => (<ul className={`${inter.className} flex flex-col gap-y-2 py-2`}>{children}</ul>),
+    li: ({children}:any) => (<li className={`${inter.className} gap-y-2 py-2`}>{children}</li>)
   },
+  list: {
+    bullet: ({children}:any) => <ul className={`${inter.className} flex flex-col gap-y-2 py-2`}>{children}</ul>,
+    number: ({children}:any) => <ol className={`${inter.className} flex flex-col gap-y-2 py-2`}>{children}</ol>,
+  }
 }
 
 const myTableOfContent = {
@@ -55,16 +60,16 @@ const Article = ({article}:any) => {
   }});
   
   return (
-    <main>
+    <main className="w-full">
     <Header isCoverImageVisiable={false} header_text={article.title} paragraph_text={`Test parahaphs`} image_url={builder.image(article.mainImage.asset._ref).url()}/>
     <div className="flex">
-      <div className="mx-10 my-6 py-10">
+      <div className="mx-10 my-6 py-10 w-1/5">
         <h3 className={`${epilogue.className} text-2xl font-bold pb-4`}>Table of Content:</h3>
         <ul className="flex flex-col gap-y-4">
         <PortableText value={test} components={myTableOfContent}/>
         </ul>
       </div>
-      <article className={`flex flex-col mx-10 my-6 py-10 ${inter.className}`}>
+      <article className={`flex flex-col mx-10 my-6 py-10 w-3/4 ${inter.className}`}>
         <PortableText value={article.body} components={myArticleView}/>
       </article>
     </div>

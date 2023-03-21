@@ -28,14 +28,10 @@ export default function Header ({header_text, paragraph_text, image_url, isCover
           <li className="transition-transform decoration-white ease-in-out delay-150 hover:underline hover:decoration-blue-400 decoration-2"><Link href="/">FAQ</Link></li>
           <li className="transition-transform decoration-white ease-in-out delay-150 hover:underline hover:decoration-blue-400 decoration-2"><Link href="/">Contacts</Link></li>
         </ul>
-        <address className="text-blue-500">
-         <a href="mailto:info@a5solution.com?subject=The%20coopetaion" className="">info@a5solution.com</a>
-        </address>
       </div>
       <div className="hidden max-md:block">
         <>
         <Drawer className="text-3xl" opened={opened} onClose={() => setOpened(false)} title={ <Image width={12} height={12} className="w-12 h-12 duration-500 hover:rounded-xl hover:border-1 border-blue-500" src={logo} alt="a5 Logo" loading={"lazy"}/>} padding={'sm'} size='sm'>
-
             <ul className="flex justify-center list-none gap-x-4 max-md:flex-col max-md:gap-y-5">
           <li className="transition-transform decoration-white ease-in-out delay-150 hover:underline hover:decoration-blue-400 decoration-2 text-3xl"><Link href="/">Services</Link></li>
           <li className="transition-transform decoration-white ease-in-out delay-150 hover:underline hover:decoration-blue-400 decoration-2 text-3xl"><Link href="/">Media</Link></li>

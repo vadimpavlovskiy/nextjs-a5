@@ -13,7 +13,7 @@ export default class _Document extends Document {
    return (
     <Html className='w-screen overflow-x-hidden'>
      <Head />
-     <body className='w-screen'>
+     <body className='w-screen min-h-screen'>
       <Main />
       <NextScript />
      </body>

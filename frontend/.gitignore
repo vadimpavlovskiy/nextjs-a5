@@ -36,3 +36,5 @@ yarn-error.log*
 .eslintrc.json
 next-env.d.ts
 client.ts
+
+next.config.js
