@@ -35,6 +35,5 @@ yarn-error.log*
 *.tsbuildinfo
 .eslintrc.json
 next-env.d.ts
-client.ts
 
 next.config.js

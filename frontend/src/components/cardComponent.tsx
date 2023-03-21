@@ -1,4 +1,4 @@
-import client from "client";
+import client from 'client';
 import imageUrlBuilder from '@sanity/image-url'
 import Image from "next/image";
 import React from "react";
@@ -15,6 +15,8 @@ interface CardComponent {
 const builder = imageUrlBuilder(client);
 
 const CardComponent = ({title, linkTo, key, slug, mainImage}:CardComponent) => {
+    console.log(builder.image(mainImage).url());
+    
     return (
         <div className="flex flex-col duration-500 bg-white rounded-xl p-4 max-w-sm hover:scale-105">
         <Link href={`${linkTo}/${slug}`}>
