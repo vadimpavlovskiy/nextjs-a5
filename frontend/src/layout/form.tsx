@@ -1,6 +1,35 @@
 import { Box, Button, Checkbox, Group, TextInput } from "@mantine/core"
 import { useForm } from "@mantine/form"
 import { send } from "emailjs-com"
+import Notiflix from 'notiflix';
+
+function ValidateEmail(mail:string) 
+{
+ if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
+  {
+    return true
+  }
+    Notiflix.Notify.failure("Please, provide a valid email adress!")
+    return false
+}
+function ValidateName(name:string) 
+{
+ if(name.length <= 0)
+  {
+    Notiflix.Notify.failure("Please, provide us your username!")
+    return false
+  }
+    return true
+}
+function ValidateTerms(terms:boolean) 
+{
+ if(!terms)
+  {
+    Notiflix.Notify.failure("Please, provide us your acception to collect your email and name")
+    return false
+  }
+    return true
+}
 
 export default function Form({}) {
    const handleSubmit = (e:any) => {
@@ -8,22 +37,27 @@ export default function Form({}) {
     const serviceId:string = process.env.service_id as string;
     const templateId:string = process.env.template_id as string;
     const userId:string = process.env.user_id as string;
-    send(
-        serviceId,
-        templateId,
-        {from_name: form.values.email,
-        to_name: 'vadimpavlvskiy@icloud.com',
-        message: `Hello from ${form.values.fullName}! I would like to work with you`,
-        reply_to: 'me'},
-        userId
-    ) .then((response) => {
-        console.log('SUCCESS!', response.status, response.text);
-      })
-      .catch((err) => {
-        console.log('FAILED...', err);
-      });
+    if(ValidateEmail(form.values.email) && ValidateName(form.values.fullName) && ValidateTerms(form.values.termsOfService)) {
+        send(
+            serviceId,
+            templateId,
+            {from_name: form.values.email,
+            to_name: 'a5dynamics365@gmail.com',
+            message: `Hello from ${form.values.fullName}! I would like to work with you`,
+            client_name: form.values.fullName, 
+            reply_to: 'Cooperation Request'},
+            userId
+        ) .then((response) => {
+            form.values.email = '';
+            form.values.fullName = '';
+            Notiflix.Notify.success('You successfully sent a message! ');
+          })
+          .catch((err) => {
+            Notiflix.Notify.failure('Oooops! Something get wrong. Please, try again!');
+          });
+    }
     form.values.email = '';
-    form.values.fullName = '';
+            form.values.fullName = '';
    }
     const form = useForm({
         initialValues: {
