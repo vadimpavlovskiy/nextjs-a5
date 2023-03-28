@@ -44,7 +44,8 @@ export default function Form({}) {
             {from_name: form.values.email,
             to_name: 'a5dynamics365@gmail.com',
             message: `Hello from ${form.values.fullName}! I would like to work with you`,
-            reply_to: 'me'},
+            client_name: form.values.fullName, 
+            reply_to: 'Cooperation Request'},
             userId
         ) .then((response) => {
             form.values.email = '';
