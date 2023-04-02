@@ -65,7 +65,7 @@ export default function Main ({articles}:any) {
         </div>
         <div className="w-1/5 drop-shadow-2xl flex border-solid duration-500 border-2 gap-y-3 py-5 flex-col items-center justify-center rounded-xl bg-white hover:scale-95 hover:border-sky-500 max-md:w-full max-xl:w-1/3">
           <Image className="w-1/4" src={photos.team} alt="only professionals in DynamicsA5" width={100} height={100} loading={'lazy'}/>
-          <h3 className={`w-1/2 text-center text ${epilogue.className}`}>Proffesional team</h3>
+          <h3 className={`w-1/2 text-center text ${epilogue.className}`}>Professional team</h3>
         </div>
       </div>
     </div>
