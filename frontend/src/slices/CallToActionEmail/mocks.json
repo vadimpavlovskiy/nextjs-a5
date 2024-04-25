@@ -1,0 +1,34 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"headercalltoaction": {
+				"__TYPE__": "FieldContent",
+				"value": "neck",
+				"type": "Text"
+			},
+			"paragraphcalltoaction": {
+				"__TYPE__": "FieldContent",
+				"value": "signal",
+				"type": "Text"
+			},
+			"emailformplaceholder": {
+				"__TYPE__": "FieldContent",
+				"value": "real",
+				"type": "Text"
+			},
+			"fullnameformplaceholder": {
+				"__TYPE__": "FieldContent",
+				"value": "wrote",
+				"type": "Text"
+			},
+			"buttoncalltoaction": {
+				"__TYPE__": "FieldContent",
+				"value": "thee",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

@@ -1,0 +1,42 @@
+{
+  "id": "footer_list_block",
+  "type": "SharedSlice",
+  "name": "FooterListBlock",
+  "description": "FooterListBlock",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "footerlisttitle": {
+          "type": "Text",
+          "config": {
+            "label": "footerListTitle",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "linktopage": {
+          "type": "Link",
+          "config": {
+            "label": "linkToPage",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "linktext": {
+          "type": "Text",
+          "config": {
+            "label": "LinkText",
+            "placeholder": ""
+          }
+        }
+      }
+    }
+  ]
+}

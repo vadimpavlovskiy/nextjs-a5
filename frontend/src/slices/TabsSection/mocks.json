@@ -1,0 +1,50 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"tabssmalltext": {
+				"__TYPE__": "FieldContent",
+				"value": "log",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"tabtitle",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "pine",
+							"type": "Text"
+						}
+					],
+					[
+						"tabslug",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "shown",
+							"type": "Text"
+						}
+					],
+					[
+						"tabtext",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Nulla dolor cillum ea."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	}
+]
