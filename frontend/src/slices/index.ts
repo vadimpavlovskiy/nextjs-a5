@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  article_text_slice: dynamic(() => import("./ArticleTextSlice")),
   call_to_action_email: dynamic(() => import("./CallToActionEmail")),
   footer_list_block: dynamic(() => import("./FooterListBlock")),
   section_block_home: dynamic(() => import("./SectionBlockHome")),

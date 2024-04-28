@@ -1,19 +1,14 @@
 
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import { Inter, Raleway } from 'next/font/google'
 import Header from '@/layout/header'
-import Main from '@/layout/main'
 import Footer from '@/layout/footer'
-import header_image from '../image/header-back.jpg';
-import client from 'client'
 import { createClient } from "@/prismicio";
 import { SliceZone } from '@prismicio/react'
 import { InferGetStaticPropsType } from 'next'
 import { isFilled } from "@prismicio/client";
 import { components } from '@/slices'
-const inter = Inter({ subsets: ['latin'] })
+
 
 export default function Home({
   page,

@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+p,
+ul,
+ol {
+  font-family: var(--nunitosans-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 29px;
+}
+h1,
+h2,
+h3 {
+  font-family: var(--raleway-font);
+  font-weight: 700;
+}

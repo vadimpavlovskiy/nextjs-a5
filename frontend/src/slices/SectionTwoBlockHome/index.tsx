@@ -26,7 +26,7 @@ const SectionTwoBlockHome = ({
       </div>
       <div className="flex flex-wrap gap-20 justify-between">
         {slice.items.map((item:any) => (
-          <div className="w-1/5 drop-shadow-2xl border-solid duration-500 border-2 flex  gap-y-3 py-5 flex-col items-center justify-center rounded-xl  bg-white hover:scale-95 hover:border-sky-500 max-md:w-full max-xl:w-1/3">
+          <div className="w-1/5 drop-shadow-2xl border-solid duration-500 border-2 flex gap-y-3 py-5 flex-col items-center justify-center rounded-xl  bg-white hover:scale-95 hover:border-sky-500 max-md:w-full max-xl:w-1/3">
           <PrismicNextImage className="w-1/4" field={item.logo} width={100} height={100} loading={'lazy'}/>
           <h3 className={`w-1/2 text-center text`}>{item.description}</h3>
         </div>

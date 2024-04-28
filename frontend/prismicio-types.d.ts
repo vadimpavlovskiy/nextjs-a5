@@ -4,6 +4,104 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+type ArticleDocumentDataSlicesSlice = ArticleTextSliceSlice;
+
+/**
+ * Content for article documents
+ */
+interface ArticleDocumentData {
+  /**
+   * articlePublishDate field in *article*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.articlepublishdate
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  articlepublishdate: prismic.DateField;
+
+  /**
+   * articleTitle field in *article*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.articletitle
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  articletitle: prismic.KeyTextField;
+
+  /**
+   * articleImage field in *article*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.articleimage
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  articleimage: prismic.ImageField<never>;
+
+  /**
+   * Slice Zone field in *article*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<ArticleDocumentDataSlicesSlice> /**
+   * Meta Description field in *article*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: article.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *article*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *article*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: article.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * article document from Prismic
+ *
+ * - **API ID**: `article`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ArticleDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<ArticleDocumentData>,
+    "article",
+    Lang
+  >;
+
 type FooterDocumentDataSlicesSlice = FooterListBlockSlice;
 
 /**
@@ -251,7 +349,71 @@ interface HomeDocumentData {
 export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<HomeDocumentData>, "home", Lang>;
 
-export type AllDocumentTypes = FooterDocument | HeaderDocument | HomeDocument;
+export type AllDocumentTypes =
+  | ArticleDocument
+  | FooterDocument
+  | HeaderDocument
+  | HomeDocument;
+
+/**
+ * Primary content in *ArticleTextSlice → Primary*
+ */
+export interface ArticleTextSliceSliceDefaultPrimary {
+  /**
+   * articleText field in *ArticleTextSlice → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_text_slice.primary.articletext
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  articletext: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *ArticleTextSlice → Items*
+ */
+export interface ArticleTextSliceSliceDefaultItem {
+  /**
+   * articleTableofContent field in *ArticleTextSlice → Items*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_text_slice.items[].articletableofcontent
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  articletableofcontent: prismic.ContentRelationshipField<"article">;
+}
+
+/**
+ * Default variation for ArticleTextSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ArticleTextSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ArticleTextSliceSliceDefaultPrimary>,
+  Simplify<ArticleTextSliceSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *ArticleTextSlice*
+ */
+type ArticleTextSliceSliceVariation = ArticleTextSliceSliceDefault;
+
+/**
+ * ArticleTextSlice Shared Slice
+ *
+ * - **API ID**: `article_text_slice`
+ * - **Description**: ArticleTextSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ArticleTextSliceSlice = prismic.SharedSlice<
+  "article_text_slice",
+  ArticleTextSliceSliceVariation
+>;
 
 /**
  * Primary content in *CallToActionEmail → Primary*
@@ -795,6 +957,9 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      ArticleDocument,
+      ArticleDocumentData,
+      ArticleDocumentDataSlicesSlice,
       FooterDocument,
       FooterDocumentData,
       FooterDocumentDataSlicesSlice,
@@ -806,6 +971,11 @@ declare module "@prismicio/client" {
       HomeDocumentDataBannerdataItem,
       HomeDocumentDataSlicesSlice,
       AllDocumentTypes,
+      ArticleTextSliceSlice,
+      ArticleTextSliceSliceDefaultPrimary,
+      ArticleTextSliceSliceDefaultItem,
+      ArticleTextSliceSliceVariation,
+      ArticleTextSliceSliceDefault,
       CallToActionEmailSlice,
       CallToActionEmailSliceDefaultPrimary,
       CallToActionEmailSliceVariation,
