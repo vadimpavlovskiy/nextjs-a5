@@ -15,7 +15,7 @@ const TocNavElement = ({ node, children, level, activeId }:{node: any, children:
           "pl-4": level === 2,
           "pl-6": level === 3,
           "text-slate-300": id !== activeId,
-          "text-blue-700": id === activeId,
+          "text-primary": id === activeId,
         })}
       >
         <a className="block" href={`#${id}`}>
@@ -103,7 +103,7 @@ const TableOfContent = ({slices}:{slices:SliceZone<ArticleTextSliceSlice>}) => {
         <>
         <h3 className={`text-2xl font-bold pb-4`}>In this article:</h3>
                 <div className="flex gap-x-4">
-                <motion.div className="w-2 h-auto bg-blue-700 rounded-2xl origin-top" style={{ scaleY: scrollYProgress }} />
+                <motion.div className="w-2 h-auto bg-primary rounded-2xl origin-top" style={{ scaleY: scrollYProgress }} />
                 <ul className="flex flex-col gap-y-4" role="list" ref={headingsList}>
                 {slices.map((slice:ArticleTextSliceSlice) => 
                   slice.slice_type === 'article_text_slice' && (

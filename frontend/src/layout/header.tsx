@@ -21,13 +21,13 @@ export default function Header ({data, header}:{data?:GroupField<Simplify<any>>,
           <div className="flex justify-center w-full p-10 ">
             <nav className="navigation bg-white fixed top-0 items-center border-1 duration-300 text-black drop-shadow-2xl w-full flex px-10 py-6 justify-between z-10 left-0 hover:rounded-b-lg">
               <Link href={'/'}>
-                <PrismicNextImage width={12} height={12} className="w-12 h-12 duration-500 hover:rounded-xl hover:border-1 border-blue-500" loading={"lazy"} field={header.logo} />
+                <PrismicNextImage width={12} height={12} className="w-12 h-12 duration-500 hover:rounded-xl " loading={"lazy"} field={header.logo} />
               </Link>
               <div className="flex gap-x-2 max-md:hidden max-md:flex-col  max-md:rounded-xl max-md:w-full">
                 <ul className="flex list-none gap-x-4 max-md:flex-col max-md:gap-y-5">
                   {header.navigation.map((item:any) => {
                     return (
-                      <li className="transition-transform decoration-white ease-in-out delay-150 hover:underline hover:decoration-blue-400 decoration-2">
+                      <li className="transition-transform decoration-white ease-in-out delay-150 hover:underline hover:decoration-primary decoration-2">
                         <PrismicNextLink field={item.link}>
                           {item.label}
                         </PrismicNextLink>
@@ -38,7 +38,7 @@ export default function Header ({data, header}:{data?:GroupField<Simplify<any>>,
               </div>
       <div className="hidden max-md:block">
         <>
-        <Drawer className="text-3xl" opened={opened} onClose={() => setOpened(false)} title={ <Image width={12} height={12} className="w-12 h-12 duration-500 hover:rounded-xl hover:border-1 border-blue-500" src={logo} alt="a5 Logo" loading={"lazy"}/>} padding={'sm'} size='sm'>
+        <Drawer className="text-3xl" opened={opened} onClose={() => setOpened(false)} title={ <Image width={12} height={12} className="w-12 h-12 duration-500 hover:rounded-xl hover:border-1 border-primary" src={logo} alt="a5 Logo" loading={"lazy"}/>} padding={'sm'} size='sm'>
           <ul className="flex justify-center list-none gap-x-4 max-md:flex-col max-md:gap-y-5">
         {header.navigation.map((item:any) => {
           return (

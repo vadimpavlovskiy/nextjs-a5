@@ -17,3 +17,7 @@ h3 {
   font-family: var(--raleway-font);
   font-weight: 700;
 }
+button {
+  font-family: var(--raleway-font);
+  font-weight: 700;
+}

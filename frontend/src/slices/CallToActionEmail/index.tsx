@@ -93,23 +93,19 @@ const CallToActionEmail = ({ slice }: CallToActionEmailProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="w-full p-10 flex gap-10 justify-between bg-gray-100 font-raleway max-sm:flex-wrap max-lg:flex-nowrap max-xl:flex-nowrap"
+      className="w-full py-28	 flex flex-col items-center gap-4 justify-between bg-primary text-white font-raleway max-sm:flex-wrap max-lg:flex-nowrap max-xl:flex-nowrap"
     >
-      <div className="w-1/2 grid gap-y-4 content-around max-sm:w-full max-md:w-full max-lg:w-1/2 max-xl:w-1/2">
+      <div className="w-3/4 grid gap-y-2 text-center content-around max-sm:w-full max-md:w-full max-lg:w-1/2 max-xl:w-1/2">
         <h2 className={`font-bold text-6xl font-nunito max-sm:text-4xl`}>{`${slice.primary.headercalltoaction}`}</h2>
-        <p className="text-xl">{`${slice.primary.paragraphcalltoaction}`}</p>
       </div>
-      <div className="w-1/2 flex flex-col items-center gap-5 rounded-xl bg-white text-black drop-shadow-2xl p-12 max-sm:w-full max-md:w-full max-lg:w-1/2 max-xl:w-1/2" >
-        <Box>
-            <form onSubmit={(event)=>(handleSubmit(event))} className="flex flex-wrap gap-10 w-full justify-center ">
-                <TextInput withAsterisk label={String(slice.primary.emailformplaceholder)} placeholder={String(slice.primary.emailformplaceholder)} {...form.getInputProps('email')}/>
-                <TextInput withAsterisk label={String(slice.primary.fullnameformplaceholder)} placeholder={String(slice.primary.fullnameformplaceholder)} {...form.getInputProps('fullName')}/>
-                <Checkbox mt="md" label="By ticking this box I consent to the given information being used by A5 Solution to email me" {...form.getInputProps('termsOfService', { type: 'checkbox' })} />
-                <Group position="right" mt="md">
-                    <Button color={'orange'} className="w-full bg-orange-500 py-1 rounded-xl border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-orange-500" type="submit">{slice.primary.buttoncalltoaction}</Button>
-                </Group>
+      <div className="w-1/2 flex flex-col items-center gap-1 rounded-xl text-black drop-shadow-2xl p-12 max-sm:w-full max-md:w-full max-lg:w-1/2 max-xl:w-1/2" >
+            <form onSubmit={(event)=>(handleSubmit(event))} className="flex gap-10 w-full justify-center ">
+              <input placeholder={String(slice.primary.emailformplaceholder)} {...form.getInputProps('email')} className="rounded-lg bg-white p-4 w-80 outline-none duration-100 focus:border-primary focus:border-2"/>
+                {/* <TextInput withAsterisk label={String(slice.primary.emailformplaceholder)} placeholder={String(slice.primary.emailformplaceholder)} {...form.getInputProps('email')}/> */}
+                <button type="button" className="border-2 rounded-lg border-white border-solid duration-300 text-white py-4 px-8 hover:bg-white hover:text-primary active:border-primary active:border-3">{slice.primary.buttoncalltoaction}</button>
+                    {/* <Button color={'orange'} className="w-full bg-orange-500 p-4 rounded-xl border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-orange-500" type="submit">{slice.primary.buttoncalltoaction}</Button> */}
           </form>
-        </Box>
+          <p className="text-center text-gray-400 mt-6">Get a response tomorrow if you submit by 9pm today. If we received after 9pm will get a reponse the following day.</p>
         </div>
     </section>
   );

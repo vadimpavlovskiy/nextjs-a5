@@ -1,6 +1,6 @@
 
 import Head from 'next/head'
-import { Inter, Raleway } from 'next/font/google'
+import { Inter,  } from 'next/font/google'
 import Header from '@/layout/header'
 import Footer from '@/layout/footer'
 import { createClient } from "@/prismicio";
