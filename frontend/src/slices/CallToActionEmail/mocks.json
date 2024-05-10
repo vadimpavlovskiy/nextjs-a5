@@ -30,5 +30,42 @@
 			}
 		},
 		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "white",
+		"primary": {
+			"headercalltoaction": {
+				"__TYPE__": "FieldContent",
+				"value": "whistle",
+				"type": "Text"
+			},
+			"paragraphcalltoaction": {
+				"__TYPE__": "FieldContent",
+				"value": "my",
+				"type": "Text"
+			},
+			"emailformplaceholder": {
+				"__TYPE__": "FieldContent",
+				"value": "including",
+				"type": "Text"
+			},
+			"fullnameformplaceholder": {
+				"__TYPE__": "FieldContent",
+				"value": "taken",
+				"type": "Text"
+			},
+			"buttoncalltoaction": {
+				"__TYPE__": "FieldContent",
+				"value": "sad",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
 	}
 ]

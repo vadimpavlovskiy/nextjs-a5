@@ -1,17 +1,16 @@
 {
   "format": "page",
-  "id": "home",
-  "label": "home",
-  "repeatable": false,
+  "id": "page",
+  "label": "page",
+  "repeatable": true,
   "status": true,
   "json": {
     "Main": {
       "uid": {
-        "type": "UID",
         "config": {
-          "label": "name",
-          "placeholder": ""
-        }
+          "label": "UID"
+        },
+        "type": "UID"
       },
       "bannerdata": {
         "type": "Group",
@@ -23,19 +22,19 @@
               "type": "Boolean",
               "config": {
                 "label": "bannerVisiable",
-                "default_value": false,
+                "placeholder_false": "false",
                 "placeholder_true": "true",
-                "placeholder_false": "false"
+                "default_value": false
               }
             },
             "bannerHeader": {
               "type": "Text",
               "config": {
-                "label": "bannerheader",
+                "label": "bannerHeader",
                 "placeholder": ""
               }
             },
-            "bannerBaragraph": {
+            "bannerParagraph": {
               "type": "Text",
               "config": {
                 "label": "bannerParagraph",
@@ -45,7 +44,7 @@
             "bannerImage": {
               "type": "Image",
               "config": {
-                "label": "bannerimage",
+                "label": "bannerImage",
                 "constraint": {},
                 "thumbnails": []
               }
@@ -58,13 +57,13 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "hero_section": {
+            "article_text_slice": {
               "type": "SharedSlice"
             },
-            "tabs_section": {
+            "big_tabs": {
               "type": "SharedSlice"
             },
-            "call_to_action_email": {
+            "section_block_home": {
               "type": "SharedSlice"
             },
             "section_provided_services_home": {
@@ -73,7 +72,7 @@
             "section_two_block_home": {
               "type": "SharedSlice"
             },
-            "section_block_home": {
+            "call_to_action_email": {
               "type": "SharedSlice"
             }
           }

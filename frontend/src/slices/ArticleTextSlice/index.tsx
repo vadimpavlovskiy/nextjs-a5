@@ -25,7 +25,7 @@ const ArticleTextSlice = ({ slice }: ArticleTextSliceProps): JSX.Element => {
     <article
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className={`flex flex-col my-4 relative`}
+      className={`flex flex-col my-4 px-10 relative`}
     >
           <PrismicRichText field={slice.primary.articletext} components={{
     heading1: ({ children, node }) => <h1 className="text-3xl" id={slugify(node)}>{children}</h1>,
@@ -51,16 +51,10 @@ const ArticleTextSlice = ({ slice }: ArticleTextSliceProps): JSX.Element => {
       return <span className={`${node.data.label}`}>{children}</span>
     },
     image: ({ node, children }) => {
-      // const linkUrl = node.linkTo ? linkResolver(node.linkTo) : null
-      // const img = `<img src="${node.url}" alt="${
-        //   node.alt ? node.alt : ''
-        // }" copyright="${node.copyright ? node.copyright : ''}" />`
         return (
           <Image className="py-4 max-w-full" src={node.url} alt={String(node.alt)} width={node.dimensions.width} height={node.dimensions.height} />
-            // linkUrl ? <a href={`${linkUrl}`}>{img}</a> : img
       )
     },
-  
     }
   }
 />

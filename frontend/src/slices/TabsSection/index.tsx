@@ -21,8 +21,8 @@ const TabsSection = ({ slice }: TabsSectionProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="w-full p-10 flex-reverse flex-row justify-between gap-y-10 max-md:flex-col-reverse"
     >
-    <p className="w-full flex text-primary font-bold justify-end pb-4 ">{slice.primary.tabssmalltext}</p>
-    <Tabs value={activeTab} color="violet" onTabChange={setActiveTab} keepMounted={false} orientation={'horizontal'} defaultValue={slice.items[0].tabslug} >
+    <p className="w-full flex text-light font-bold justify-end pb-4 ">{slice.primary.tabssmalltext}</p>
+    <Tabs value={activeTab} color="gray" onTabChange={setActiveTab} keepMounted={false} orientation={'horizontal'} defaultValue={slice.items[0].tabslug} >
       <Tabs.List grow>
         {slice.items.map((item:any) => {
           return (

@@ -7,7 +7,7 @@ import { FooterDocument } from "prismicio-types";
 
 export default function Footer({footer}:{footer:FooterDocument<string>}) {
     return (
-        <footer className="w-screen bg-primary text-white max-md:flex max-md:flex-col max-md:gap-y-10 max-md:px-10 max-2xl:flex max-2xl:flex-wrap flex-shrink">
+        <footer className="w-screen bg-light text-white max-md:flex max-md:flex-col max-md:gap-y-10 max-md:px-10 max-2xl:flex max-2xl:flex-wrap flex-shrink">
     <div className="w-full grid grid-cols-4 justify-between max-sm:grid-cols-2">
         <SliceZone slices={footer.data.slices} components={components} />
     </div>

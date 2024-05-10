@@ -34,24 +34,25 @@ const Article = ({page,
           ) : null}
       </Head>
      <Header header={header.data} />
-      <main className="w-full flex mt-40 mx-10 gap-4">
+      <main className="w-full flex mt-40 gap-4">
             <div className="w-2/3">
-                <div className="relative">
+                <div className="relative mx-10">
                   <PrismicNextImage className="w-full rounded-xl bg-white" field={data.articleimage} />
                   <div className="flex flex-col w-full absolute bottom-0 pb-4 px-5 text-white font-bold backdrop-blur">
                     <h1 className="text-gray-100">{data.articletitle}</h1>
                     <p className="text-gray-100" suppressHydrationWarning>{(new Date(String(data.articlepublishdate)).toLocaleDateString())}</p>
                   </div>
                 </div>
+                <div>
                   <SliceZone slices={data.slices} components={components} />
+                </div>
             </div>
             <div className="w-1/3 h-full max-h-screen overflow-y-auto flex flex-col flex-grow relative">
-              <div className="fixed">
+              <div className="fixed pr-10">
                 <TableOfContent slices={data.slices} />
                 </div>
           </div>
-<AffixTop />
-
+          <AffixTop />
       </main>
       
     </>

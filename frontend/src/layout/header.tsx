@@ -17,9 +17,8 @@ export default function Header ({data, header}:{data?:GroupField<Simplify<any>>,
     const [opened, setOpened] = useState(false);
     const title = opened ? 'Close navigation' : 'Open navigation';
     return (
-        <header style={{backgroundImage: data ? `url("${data[0]?.bannerImage.url}")` : ''}} className={`w-screen flex flex-col justify-center ${data ? data[0]?.bannerVisiable ? 'h-screen' : 'h-0' : 'h-0'} bg-cover bg-blend-darken m-0 left-0`}>
-          <div className="flex justify-center w-full p-10 ">
-            <nav className="navigation bg-white fixed top-0 items-center border-1 duration-300 text-black drop-shadow-2xl w-full flex px-10 py-6 justify-between z-10 left-0 hover:rounded-b-lg">
+        <header className={`w-screen flex flex-col justify-center mb-24`}>
+            <nav className="navigation text-black font-bold fixed bg-white top-0 items-center border-1 duration-300 drop-shadow-2xl w-full flex px-10 py-6 justify-between z-10 left-0 hover:rounded-b-lg">
               <Link href={'/'}>
                 <PrismicNextImage width={12} height={12} className="w-12 h-12 duration-500 hover:rounded-xl " loading={"lazy"} field={header.logo} />
               </Link>
@@ -27,7 +26,7 @@ export default function Header ({data, header}:{data?:GroupField<Simplify<any>>,
                 <ul className="flex list-none gap-x-4 max-md:flex-col max-md:gap-y-5">
                   {header.navigation.map((item:any) => {
                     return (
-                      <li className="transition-transform decoration-white ease-in-out delay-150 hover:underline hover:decoration-primary decoration-2">
+                      <li className="transition-transform font-bold text-xl decoration-white ease-in-out delay-150 hover:underline hover:decoration-light decoration-2">
                         <PrismicNextLink field={item.link}>
                           {item.label}
                         </PrismicNextLink>
@@ -55,8 +54,7 @@ export default function Header ({data, header}:{data?:GroupField<Simplify<any>>,
         <Burger opened={opened} onClick={() => setOpened((o) => !o)} title={title}/>
       </div>
       </nav>
-    </div>
-    <CoverImage header_text={data ? data[0]?.bannerHeader : ''} paragraph_text={data ? data[0]?.bannerBaragraph : ''}/>
+    {/* <CoverImage header_text={data ? data[0]?.bannerHeader : ''} paragraph_text={data ? data[0]?.bannerParagraph : ''}/> */}
     </header>
     )
 }

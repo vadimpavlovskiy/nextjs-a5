@@ -13,7 +13,7 @@ function AffixTop() {
         <Transition transition={'slide-up'} duration={400} exitDuration={400} timingFunction="linear" mounted={scroll.y>100 }>
           {(transitionStyles) => (
             <Button
-              className='bg-primary rounded-full h-14 w-14 duration-300'
+              className='bg-light rounded-full h-14 w-14 duration-300'
               style={transitionStyles}
               onClick={() => scrollTo({ y: 0 })}
             >

@@ -18,17 +18,17 @@ const SectionTwoBlockHome = ({
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="flex flex-col p-10 bg-gray-100"
+      className="flex flex-col p-10 bg-secondary "
     >
       <div className="flex flex-col items-end">
-        <p className="text-primary font-bold">{slice.primary.sectionsmalltext}</p>
-        <h2 className={`capitalize text-3xl font-bold my-4`}>{slice.primary.sectionheadingtext}</h2>
+        <p className="font-bold text-black">{slice.primary.sectionsmalltext}</p>
+        <h2 className={`text-black capitalize text-3xl font-bold my-4`}>{slice.primary.sectionheadingtext}</h2>
       </div>
       <div className="flex gap-5 justify-between">
         {slice.items.map((item:any) => (
-          <div className="w-1/4 drop-shadow-2xl border-solid duration-500 border-2 flex gap-y-3 py-10 px-1 flex-col items-center justify-center rounded-xl bg-white hover:scale-95 hover:border-primary max-md:w-full max-xl:w-1/3">
+          <div className="w-1/4 group drop-shadow-2xl border-solid duration-500 border-2 flex gap-y-3 py-10 px-1 flex-col items-center justify-center rounded-xl border-primary bg-light hover:scale-95 hover:bg-light hover:border-secondary max-md:w-full max-xl:w-1/3">
           <PrismicNextImage className="w-1/5" field={item.logo} width={100} height={100} loading={'lazy'}/>
-          <h3 className={`w-full text-center text-primary text-xl `}>{item.description}</h3>
+          <h3 className={`w-full text-center text-white text-xl group-hover:text-white`}>{item.description}</h3>
         </div>
         ))}
         

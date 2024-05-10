@@ -3,7 +3,7 @@ import { clsx } from "@mantine/core";
 import { SliceZone } from "@prismicio/client";
 import { PrismicRichText } from "@prismicio/react";
 import { useScroll, motion } from "framer-motion";
-import { ArticleTextSliceSlice } from "prismicio-types";
+import { ArticleTextSliceSlice, PageDocumentDataSlicesSlice } from "prismicio-types";
 import { useEffect, useRef, useState } from "react";
 
 const TocNavElement = ({ node, children, level, activeId }:{node: any, children: any, level: any, activeId: string | null}) => {
@@ -14,8 +14,9 @@ const TocNavElement = ({ node, children, level, activeId }:{node: any, children:
           "pl-2": level === 1,
           "pl-4": level === 2,
           "pl-6": level === 3,
-          "text-slate-300": id !== activeId,
-          "text-primary": id === activeId,
+          "pl-8": level === 3,
+          "text-tertiary": id !== activeId,
+          "text-light": id === activeId,
         })}
       >
         <a className="block" href={`#${id}`}>
@@ -25,7 +26,7 @@ const TocNavElement = ({ node, children, level, activeId }:{node: any, children:
     );
   };
 
-const TableOfContent = ({slices}:{slices:SliceZone<ArticleTextSliceSlice>}) => {
+const TableOfContent = ({slices}:{slices:SliceZone<ArticleTextSliceSlice> | ArticleTextSliceSlice }) => {
     const { scrollYProgress } = useScroll();
     const headingsList = useRef<any>(null);
     const [headings, setHeadings] = useState<any[]>([]);
@@ -103,9 +104,9 @@ const TableOfContent = ({slices}:{slices:SliceZone<ArticleTextSliceSlice>}) => {
         <>
         <h3 className={`text-2xl font-bold pb-4`}>In this article:</h3>
                 <div className="flex gap-x-4">
-                <motion.div className="w-2 h-auto bg-primary rounded-2xl origin-top" style={{ scaleY: scrollYProgress }} />
+                <motion.div className="w-2 h-auto bg-light rounded-2xl origin-top" style={{ scaleY: scrollYProgress }} />
                 <ul className="flex flex-col gap-y-4" role="list" ref={headingsList}>
-                {slices.map((slice:ArticleTextSliceSlice) => 
+                {slices.map((slice:ArticleTextSliceSlice | PageDocumentDataSlicesSlice ) => 
                   slice.slice_type === 'article_text_slice' && (
                     <PrismicRichText key={slice.id} field={slice.primary.articletext} components={{
                       heading1: ({node, children, key}) => (
@@ -129,6 +130,14 @@ const TableOfContent = ({slices}:{slices:SliceZone<ArticleTextSliceSlice>}) => {
                         children={children}
                         key={key}
                         level={3}
+                        activeId={activeId}
+                        />
+                      ),
+                      heading4: ({node, children, key}) => (
+                        <TocNavElement node={node}
+                        children={children}
+                        key={key}
+                        level={4}
                         activeId={activeId}
                         />
                       ),

@@ -367,6 +367,7 @@ export interface HomeDocumentDataBannerdataItem {
 }
 
 type HomeDocumentDataSlicesSlice =
+  | HeroSectionSlice
   | TabsSectionSlice
   | CallToActionEmailSlice
   | SectionProvidedServicesHomeSlice
@@ -443,12 +444,137 @@ interface HomeDocumentData {
 export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<HomeDocumentData>, "home", Lang>;
 
+/**
+ * Item in *page → bannerData*
+ */
+export interface PageDocumentDataBannerdataItem {
+  /**
+   * bannerVisiable field in *page → bannerData*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: page.bannerdata[].bannerVisiable
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  bannerVisiable: prismic.BooleanField;
+
+  /**
+   * bannerHeader field in *page → bannerData*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.bannerdata[].bannerHeader
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  bannerHeader: prismic.KeyTextField;
+
+  /**
+   * bannerParagraph field in *page → bannerData*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.bannerdata[].bannerParagraph
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  bannerParagraph: prismic.KeyTextField;
+
+  /**
+   * bannerImage field in *page → bannerData*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.bannerdata[].bannerImage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  bannerImage: prismic.ImageField<never>;
+}
+
+type PageDocumentDataSlicesSlice =
+  | ArticleTextSliceSlice
+  | BigTabsSlice
+  | SectionBlockHomeSlice
+  | SectionProvidedServicesHomeSlice
+  | SectionTwoBlockHomeSlice
+  | CallToActionEmailSlice;
+
+/**
+ * Content for page documents
+ */
+interface PageDocumentData {
+  /**
+   * bannerData field in *page*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.bannerdata[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  bannerdata: prismic.GroupField<Simplify<PageDocumentDataBannerdataItem>>;
+
+  /**
+   * Slice Zone field in *page*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<PageDocumentDataSlicesSlice> /**
+   * Meta Description field in *page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: page.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *page*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: page.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * page document from Prismic
+ *
+ * - **API ID**: `page`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PageDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
+
 export type AllDocumentTypes =
   | ArticleDocument
   | BlogDocument
   | FooterDocument
   | HeaderDocument
-  | HomeDocument;
+  | HomeDocument
+  | PageDocument;
 
 /**
  * Primary content in *ArticleTextSlice → Primary*
@@ -463,6 +589,16 @@ export interface ArticleTextSliceSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   articletext: prismic.RichTextField;
+
+  /**
+   * tableOfContent field in *ArticleTextSlice → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_text_slice.primary.tableofcontent
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  tableofcontent: prismic.ContentRelationshipField;
 }
 
 /**
@@ -508,6 +644,96 @@ type ArticleTextSliceSliceVariation = ArticleTextSliceSliceDefault;
 export type ArticleTextSliceSlice = prismic.SharedSlice<
   "article_text_slice",
   ArticleTextSliceSliceVariation
+>;
+
+/**
+ * Primary content in *BigTabs → Primary*
+ */
+export interface BigTabsSliceDefaultPrimary {
+  /**
+   * smallText field in *BigTabs → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: big_tabs.primary.smalltext
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  smalltext: prismic.KeyTextField;
+
+  /**
+   * textHeading field in *BigTabs → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: big_tabs.primary.textheading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  textheading: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *BigTabs → Items*
+ */
+export interface BigTabsSliceDefaultItem {
+  /**
+   * numberTab field in *BigTabs → Items*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: big_tabs.items[].numbertab
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  numbertab: prismic.NumberField;
+
+  /**
+   * headingTab field in *BigTabs → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: big_tabs.items[].headingtab
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  headingtab: prismic.KeyTextField;
+
+  /**
+   * textTab field in *BigTabs → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: big_tabs.items[].texttab
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  texttab: prismic.RichTextField;
+}
+
+/**
+ * Default variation for BigTabs Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BigTabsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BigTabsSliceDefaultPrimary>,
+  Simplify<BigTabsSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *BigTabs*
+ */
+type BigTabsSliceVariation = BigTabsSliceDefault;
+
+/**
+ * BigTabs Shared Slice
+ *
+ * - **API ID**: `big_tabs`
+ * - **Description**: BigTabs
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BigTabsSlice = prismic.SharedSlice<
+  "big_tabs",
+  BigTabsSliceVariation
 >;
 
 /**
@@ -579,9 +805,79 @@ export type CallToActionEmailSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *CallToActionEmail → Primary*
+ */
+export interface CallToActionEmailSliceWhitePrimary {
+  /**
+   * Headercalltoaction field in *CallToActionEmail → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action_email.primary.headercalltoaction
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  headercalltoaction: prismic.KeyTextField;
+
+  /**
+   * Paragraphcalltoaction field in *CallToActionEmail → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action_email.primary.paragraphcalltoaction
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  paragraphcalltoaction: prismic.KeyTextField;
+
+  /**
+   * EmailFormPlaceholder field in *CallToActionEmail → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action_email.primary.emailformplaceholder
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  emailformplaceholder: prismic.KeyTextField;
+
+  /**
+   * FullNameFormPlaceholder field in *CallToActionEmail → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action_email.primary.fullnameformplaceholder
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  fullnameformplaceholder: prismic.KeyTextField;
+
+  /**
+   * ButtonCallToAction field in *CallToActionEmail → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action_email.primary.buttoncalltoaction
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  buttoncalltoaction: prismic.KeyTextField;
+}
+
+/**
+ * White variation for CallToActionEmail Slice
+ *
+ * - **API ID**: `white`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CallToActionEmailSliceWhite = prismic.SharedSliceVariation<
+  "white",
+  Simplify<CallToActionEmailSliceWhitePrimary>,
+  never
+>;
+
+/**
  * Slice variation for *CallToActionEmail*
  */
-type CallToActionEmailSliceVariation = CallToActionEmailSliceDefault;
+type CallToActionEmailSliceVariation =
+  | CallToActionEmailSliceDefault
+  | CallToActionEmailSliceWhite;
 
 /**
  * CallToActionEmail Shared Slice
@@ -663,6 +959,81 @@ type FooterListBlockSliceVariation = FooterListBlockSliceDefault;
 export type FooterListBlockSlice = prismic.SharedSlice<
   "footer_list_block",
   FooterListBlockSliceVariation
+>;
+
+/**
+ * Primary content in *HeroSection → Primary*
+ */
+export interface HeroSectionSliceDefaultPrimary {
+  /**
+   * HeroImage field in *HeroSection → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.primary.heroimage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  heroimage: prismic.ImageField<never>;
+
+  /**
+   * HeroHeading field in *HeroSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.primary.heroheading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heroheading: prismic.KeyTextField;
+
+  /**
+   * HeroParagraph field in *HeroSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.primary.heroparagraph
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heroparagraph: prismic.KeyTextField;
+
+  /**
+   * HeroButton field in *HeroSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.primary.herobutton
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  herobutton: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for HeroSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeroSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *HeroSection*
+ */
+type HeroSectionSliceVariation = HeroSectionSliceDefault;
+
+/**
+ * HeroSection Shared Slice
+ *
+ * - **API ID**: `hero_section`
+ * - **Description**: HeroSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSectionSlice = prismic.SharedSlice<
+  "hero_section",
+  HeroSectionSliceVariation
 >;
 
 /**
@@ -1068,21 +1439,36 @@ declare module "@prismicio/client" {
       HomeDocumentData,
       HomeDocumentDataBannerdataItem,
       HomeDocumentDataSlicesSlice,
+      PageDocument,
+      PageDocumentData,
+      PageDocumentDataBannerdataItem,
+      PageDocumentDataSlicesSlice,
       AllDocumentTypes,
       ArticleTextSliceSlice,
       ArticleTextSliceSliceDefaultPrimary,
       ArticleTextSliceSliceDefaultItem,
       ArticleTextSliceSliceVariation,
       ArticleTextSliceSliceDefault,
+      BigTabsSlice,
+      BigTabsSliceDefaultPrimary,
+      BigTabsSliceDefaultItem,
+      BigTabsSliceVariation,
+      BigTabsSliceDefault,
       CallToActionEmailSlice,
       CallToActionEmailSliceDefaultPrimary,
+      CallToActionEmailSliceWhitePrimary,
       CallToActionEmailSliceVariation,
       CallToActionEmailSliceDefault,
+      CallToActionEmailSliceWhite,
       FooterListBlockSlice,
       FooterListBlockSliceDefaultPrimary,
       FooterListBlockSliceDefaultItem,
       FooterListBlockSliceVariation,
       FooterListBlockSliceDefault,
+      HeroSectionSlice,
+      HeroSectionSliceDefaultPrimary,
+      HeroSectionSliceVariation,
+      HeroSectionSliceDefault,
       SectionBlockHomeSlice,
       SectionBlockHomeSliceDefaultPrimary,
       SectionBlockHomeSliceReversePrimary,

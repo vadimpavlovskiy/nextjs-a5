@@ -45,7 +45,7 @@ export default function Page({
           {articles.results.map((article:ArticleDocument) => {
             const {data} = article;
             return (
-                <div key={article.id} className="flex flex-col w-1/4 bg-gray-100 p-4 rounded-lg">
+                <div key={article.id} className="flex flex-col w-1/4 bg-primary p-4 rounded-lg">
                   <PrismicLink href={String(article.url)}>
                       <PrismicNextImage className="rounded-xl h-56 pb-4" width={400} height={200} field={data.articleimage} />
                     <span className="text-xs">Published: <time suppressHydrationWarning>{data.articlepublishdate}</time></span>
@@ -69,7 +69,7 @@ export default function Page({
         {articles.total_pages !== 1 ?
         <ol className='flex gap-4'>
         {[...Array(articles.total_pages)].map((_, index) => (
-          <li className={clsx('border-solid border-2 text-black py-2 px-4 rounded-xl hover:bg-primary hover:text-white', {'bg-primary text-white': Number(page) === index + 1, })} key={index + 1}>
+          <li className={clsx('border-solid border-2 text-black py-2 px-4 rounded-xl hover:bg-light hover:text-white', {'bg-light text-white': Number(page) === index + 1, })} key={index + 1}>
             <Link href={{
               pathname: '/blog',
               query: index + 1 === 1 ? {} : { page: index + 1 }
