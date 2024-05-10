@@ -18,7 +18,7 @@ const BigTabs = ({ slice }: BigTabsProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="w-full p-10 flex flex-col"
     >
-      <div className="w-1/2 mx-6 mb-4">
+      <div className="w-1/2 mb-4">
         <p className="font-raleway font-bold mb-8">{slice.primary.smalltext}</p>
         <h2 className="text-5xl font-nunitosans">{slice.primary.textheading}</h2>
       </div>

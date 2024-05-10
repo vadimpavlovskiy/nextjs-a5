@@ -26,7 +26,7 @@ const TocNavElement = ({ node, children, level, activeId }:{node: any, children:
     );
   };
 
-const TableOfContent = ({slices}:{slices:SliceZone<ArticleTextSliceSlice> | ArticleTextSliceSlice }) => {
+const TableOfContent = ({slices}:{slices:SliceZone<ArticleTextSliceSlice> }) => {
     const { scrollYProgress } = useScroll();
     const headingsList = useRef<any>(null);
     const [headings, setHeadings] = useState<any[]>([]);
