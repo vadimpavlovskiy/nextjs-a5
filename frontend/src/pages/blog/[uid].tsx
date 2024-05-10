@@ -2,6 +2,7 @@ import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import { isFilled, asLink } from "@prismicio/client";
 import { PrismicRichText, PrismicText, SliceZone } from "@prismicio/react";
+import * as prismic from '@prismicio/client'
 
 import { components } from "@/slices";
 import { createClient } from "@/prismicio";
@@ -15,6 +16,8 @@ import { motion, useScroll } from "framer-motion"
 import { useEffect, useRef, useState } from "react";
 import TableOfContent from "@/layout/tableOfContent";
 import AffixTop from "@/components/affix";
+import { useRouter } from "next/router";
+import Footer from "@/layout/footer";
 
 type Params = { uid: string };
 
@@ -25,6 +28,10 @@ const Article = ({page,
 }
   :InferGetStaticPropsType<typeof getStaticProps>) => {
     const {data} = page;
+    const router = useRouter()
+    if (router.isFallback) {
+      return <div>Loading...</div>
+    }  
     return (
       <>
       <Head>
@@ -54,7 +61,7 @@ const Article = ({page,
           </div>
           <AffixTop />
       </main>
-      
+      <Footer footer={footer} />
     </>
       )
 }
@@ -67,12 +74,14 @@ export async function getStaticProps({
   // drafts from the Page Builder.
   const client = createClient({ previewData });
 
+
   const page = await client.getByUID("article", params!.uid);
   const header = await client.getSingle('header');
   const footer = await client.getSingle('footer');
-
+  
   return {
     props: { page, footer, header },
+    revalidate: 3600,
   };
 }
 
@@ -83,7 +92,7 @@ export async function getStaticPaths() {
 
   return {
     paths: pages.map((page) => {
-      return asLink(page);
+      return {params: {uid: page.uid}};
     }),
     fallback: 'blocking',
   };
