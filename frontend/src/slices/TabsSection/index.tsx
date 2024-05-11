@@ -23,7 +23,7 @@ const TabsSection = ({ slice }: TabsSectionProps): JSX.Element => {
     >
     <p className="w-full flex text-light font-bold justify-end pb-4 ">{slice.primary.tabssmalltext}</p>
     <Tabs value={activeTab} color="gray" onTabChange={setActiveTab} keepMounted={false} orientation={'horizontal'} defaultValue={slice.items[0].tabslug} >
-      <Tabs.List grow>
+      <Tabs.List grow className="flex justify-between text-3xl max-md:flex-col">
         {slice.items.map((item:any) => {
           return (
             <Tabs.Tab onClick={() => {setTimeout(()=>{setOpened(true)}, 1000); if(opened && activeTab !== item.tabslug){setOpened(!opened)}}} value={item.tabslug}>{item.tabtitle}</Tabs.Tab>
@@ -33,7 +33,7 @@ const TabsSection = ({ slice }: TabsSectionProps): JSX.Element => {
       {
         slice.items.map((item:any) => {
           return (
-            <Tabs.Panel value={item.tabslug} pl="sm">
+            <Tabs.Panel value={item.tabslug} pl={'xl'}>
               <motion.div initial={{ y: -50, scaleZ: 0, display: 'none' }} animate={{ y: 10, scaleZ: '100%', display: 'block'  }} transition={{ duration: 1, type: "spring", stiffness: 100 }}>
                 <div className="flex flex-col w-full p-10 gap-y-4">
                   <PrismicRichText field={item.tabtext} />

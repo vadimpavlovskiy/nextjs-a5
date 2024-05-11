@@ -37,7 +37,7 @@ export default function Header ({data, header}:{data?:GroupField<Simplify<any>>,
               </div>
       <div className="hidden max-md:block">
         <>
-        <Drawer className="text-3xl" opened={opened} onClose={() => setOpened(false)} title={ <Image width={12} height={12} className="w-12 h-12 duration-500 hover:rounded-xl hover:border-1 border-primary" src={logo} alt="a5 Logo" loading={"lazy"}/>} padding={'sm'} size='sm'>
+        <Drawer className="text-3xl" opened={opened} onClose={() => setOpened(false)} title={ <PrismicNextImage width={12} height={12} className="w-12 h-12 duration-500 hover:rounded-xl hover:border-1 border-primary" field={header.logo} loading={"lazy"}/>} padding={'sm'} size='sm'>
           <ul className="flex justify-center list-none gap-x-4 max-md:flex-col max-md:gap-y-5">
         {header.navigation.map((item:any) => {
           return (

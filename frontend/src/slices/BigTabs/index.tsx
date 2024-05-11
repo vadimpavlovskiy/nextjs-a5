@@ -22,11 +22,11 @@ const BigTabs = ({ slice }: BigTabsProps): JSX.Element => {
         <p className="font-raleway font-bold mb-8">{slice.primary.smalltext}</p>
         <h2 className="text-5xl font-nunitosans">{slice.primary.textheading}</h2>
       </div>
-      <div className={clsx(`w-full grid grid-cols-3 auto-cols-fr grid-rows-${slice.items.length % 3 + 1} gap-x-4 text-light`, 
+      <div className={clsx(`w-full grid grid-cols-3 auto-cols-fr grid-rows-${slice.items.length % 3 + 1} gap-x-4 text-light max-md:grid-cols-1`, 
       {'grid-cols-1': slice.items.length === 1,
        'grid-cols-2': slice.items.length === 2,
        'grid-cols-3': slice.items.length === 3,
-       }
+       },
        )}
        >
         {slice.items.map((item:Simplify<Content.BigTabsSliceDefaultItem>, index:number) => {

@@ -101,10 +101,10 @@ const CallToActionEmail = ({ slice }: CallToActionEmailProps): JSX.Element => {
         <h2 className={`font-bold text-6xl font-nunito max-sm:text-4xl`}>{`${slice.primary.headercalltoaction}`}</h2>
       </div>
       <div className="w-1/2 flex flex-col items-center gap-1 rounded-xl text-black drop-shadow-2xl p-12 max-sm:w-full max-md:w-full max-lg:w-1/2 max-xl:w-1/2" >
-            <form onSubmit={(event)=>(handleSubmit(event))} className="flex gap-10 w-full justify-center ">
-              <input placeholder={String(slice.primary.emailformplaceholder)} {...form.getInputProps('email')} className="rounded-lg bg-white p-4 w-80 outline-none duration-100 focus:border-light focus:border-2"/>
+            <form onSubmit={(event)=>(handleSubmit(event))} className="flex gap-10 w-full justify-center max-sm:flex-col ">
+              <input placeholder={String(slice.primary.emailformplaceholder)} {...form.getInputProps('email')} className="rounded-lg bg-white p-4 w-80 outline-none duration-100 max-sm:w-full focus:border-light focus:border-2"/>
                 {/* <TextInput withAsterisk label={String(slice.primary.emailformplaceholder)} placeholder={String(slice.primary.emailformplaceholder)} {...form.getInputProps('email')}/> */}
-                <button type="button" className="border-2 bg-light rounded-lg border-primary border-solid duration-300 text-white py-4 px-8 hover:bg-primary hover:text-light active:border-light active:border-3">{slice.primary.buttoncalltoaction}</button>
+                <button type="button" className=" border-2 bg-light rounded-lg border-primary border-solid duration-300 text-white py-4 px-8 hover:bg-primary hover:text-light active:border-light active:border-3 max-sm:w-full">{slice.primary.buttoncalltoaction}</button>
           </form>
           <p className="text-center text-tertiary mt-6">Get a response tomorrow if you submit by 9pm today. If we received after 9pm will get a reponse the following day.</p>
         </div>
