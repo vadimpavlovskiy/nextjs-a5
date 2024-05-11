@@ -32,8 +32,8 @@ const BigTabs = ({ slice }: BigTabsProps): JSX.Element => {
         {slice.items.map((item:Simplify<Content.BigTabsSliceDefaultItem>, index:number) => {
           return (
             <div className={clsx("group p-6 duration-300 rounded-2xl col-span-1 hover:text-white hover:bg-light", {})}>
-              <p className="font-bold font-bebas text-7xl">{item.numbertab}</p>
-              <h3 className="font-bold font-bebas text-2xl text-tertiary group-hover:text-white">{item.headingtab}</h3>
+              <p className="font-bold font-nunitosans text-7xl">{item.numbertab}</p>
+              <h3 className="font-bold font-nunitosans text-2xl text-tertiary group-hover:text-white">{item.headingtab}</h3>
               <PrismicRichText field={item.texttab} />
             </div>
           )
