@@ -1,0 +1,46 @@
+{
+  "id": "article_text_slice",
+  "type": "SharedSlice",
+  "name": "ArticleTextSlice",
+  "description": "ArticleTextSlice",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "articletext": {
+          "type": "StructuredText",
+          "config": {
+            "label": "articleText",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "tableofcontent": {
+          "type": "Link",
+          "config": {
+            "label": "tableOfContent",
+            "select": "document"
+          }
+        }
+      },
+      "items": {
+        "articletableofcontent": {
+          "type": "Link",
+          "config": {
+            "label": "articleTableofContent",
+            "select": "document",
+            "customtypes": [
+              "article"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

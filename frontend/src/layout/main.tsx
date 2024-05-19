@@ -19,7 +19,7 @@ const inter = Inter({
   variable: '--font-inter',
 })
 
-export default function Main ({articles}:any) {
+export default function Main () {
   const [opened, setOpened] = useState(true);
   const [activeTab, setActiveTab] = useState<string | null>('experts');
   
@@ -45,7 +45,7 @@ export default function Main ({articles}:any) {
         </div>
       </div>
     </section>
-    <div className="flex flex-col p-10 bg-gray-100">
+    <section className="flex flex-col p-10 bg-gray-100">
       <div className="flex flex-col items-end">
         <p className="text-blue-700 font-bold">Our achievements</p>
         <h2 className={`capitalize text-3xl font-bold my-4 ${epilogue.className}`}>Some of our archivements:</h2>
@@ -68,7 +68,7 @@ export default function Main ({articles}:any) {
           <h3 className={`w-1/2 text-center text ${epilogue.className}`}>Professional team</h3>
         </div>
       </div>
-    </div>
+    </section>
     <section> 
       <div className="section-1 p-10">
       <p className="text-blue-700 font-bold">Abous Us</p>
@@ -122,15 +122,6 @@ export default function Main ({articles}:any) {
           <Image className="w-1/4 group-hover:scale-125 group-hover:-translate-y-5 duration-500" src={photos.consulting} alt="HR management" loading={'lazy'}/>
           <h3 className={`w-1/2 text-center text ${epilogue.className}`}>Human resource management</h3>
         </div>
-      </div>
-    </section>
-    <section className="w-full p-10 flex gap-10 justify-between bg-gray-100 font-raleway max-sm:flex-wrap max-lg:flex-nowrap max-xl:flex-nowrap">
-      <div className="w-1/2 grid gap-y-4 content-around max-sm:w-full max-md:w-full max-lg:w-1/2 max-xl:w-1/2">
-        <h2 className={`font-bold text-6xl font-nunito max-sm:text-4xl ${epilogue.className}`}>{`Let's discuss your project!`}</h2>
-      <p className="text-xl">{`Let's figure out how to create an effective Dynamics Application together! Leave your email and we'll contact you within 30 minutes`}</p>
-      </div>
-      <div className="w-1/2 flex flex-col items-center gap-5 rounded-xl bg-white text-black drop-shadow-2xl p-12 max-sm:w-full max-md:w-full max-lg:w-1/2 max-xl:w-1/2" >
-          <Form />
       </div>
     </section>
     <section className="w-full p-10 flex-reverse flex-row justify-between gap-y-10 max-md:flex-col-reverse">
@@ -229,7 +220,7 @@ export default function Main ({articles}:any) {
        </Tabs.Panel>
     </Tabs>
      </section>
-    <CardLayout articles={articles} />
+    {/* <CardLayout articles={articles} /> */}
   </main>
     )
 }

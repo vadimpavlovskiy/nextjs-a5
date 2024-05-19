@@ -1,0 +1,57 @@
+{
+  "id": "big_tabs",
+  "type": "SharedSlice",
+  "name": "BigTabs",
+  "description": "BigTabs",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "smalltext": {
+          "type": "Text",
+          "config": {
+            "label": "smallText",
+            "placeholder": ""
+          }
+        },
+        "textheading": {
+          "type": "Text",
+          "config": {
+            "label": "textHeading",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "numbertab": {
+          "type": "Number",
+          "config": {
+            "label": "numberTab",
+            "placeholder": ""
+          }
+        },
+        "headingtab": {
+          "type": "Text",
+          "config": {
+            "label": "headingTab",
+            "placeholder": ""
+          }
+        },
+        "texttab": {
+          "type": "StructuredText",
+          "config": {
+            "label": "textTab",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "id": "call_to_action_email",
+  "type": "SharedSlice",
+  "name": "CallToActionEmail",
+  "description": "CallToActionEmail",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "headercalltoaction": {
+          "type": "Text",
+          "config": {
+            "label": "Headercalltoaction",
+            "placeholder": ""
+          }
+        },
+        "paragraphcalltoaction": {
+          "type": "Text",
+          "config": {
+            "label": "Paragraphcalltoaction",
+            "placeholder": ""
+          }
+        },
+        "emailformplaceholder": {
+          "type": "Text",
+          "config": {
+            "label": "EmailFormPlaceholder",
+            "placeholder": ""
+          }
+        },
+        "fullnameformplaceholder": {
+          "type": "Text",
+          "config": {
+            "label": "FullNameFormPlaceholder",
+            "placeholder": ""
+          }
+        },
+        "buttoncalltoaction": {
+          "type": "Text",
+          "config": {
+            "label": "ButtonCallToAction",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "white",
+      "name": "White",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "headercalltoaction": {
+          "type": "Text",
+          "config": {
+            "label": "Headercalltoaction",
+            "placeholder": ""
+          }
+        },
+        "paragraphcalltoaction": {
+          "type": "Text",
+          "config": {
+            "label": "Paragraphcalltoaction",
+            "placeholder": ""
+          }
+        },
+        "emailformplaceholder": {
+          "type": "Text",
+          "config": {
+            "label": "EmailFormPlaceholder",
+            "placeholder": ""
+          }
+        },
+        "fullnameformplaceholder": {
+          "type": "Text",
+          "config": {
+            "label": "FullNameFormPlaceholder",
+            "placeholder": ""
+          }
+        },
+        "buttoncalltoaction": {
+          "type": "Text",
+          "config": {
+            "label": "ButtonCallToAction",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

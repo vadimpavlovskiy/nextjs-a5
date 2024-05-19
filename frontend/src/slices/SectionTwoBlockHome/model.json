@@ -1,0 +1,49 @@
+{
+  "id": "section_two_block_home",
+  "type": "SharedSlice",
+  "name": "SectionTwoBlockHome",
+  "description": "SectionTwoBlockHome",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "sectionsmalltext": {
+          "type": "Text",
+          "config": {
+            "label": "sectionSmallText",
+            "placeholder": ""
+          }
+        },
+        "sectionheadingtext": {
+          "type": "Text",
+          "config": {
+            "label": "sectionHeadingText",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "logo": {
+          "type": "Image",
+          "config": {
+            "label": "logo",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "description": {
+          "type": "Text",
+          "config": {
+            "label": "description",
+            "placeholder": ""
+          }
+        }
+      }
+    }
+  ]
+}

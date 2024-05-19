@@ -1,0 +1,98 @@
+{
+  "id": "section_block_home",
+  "type": "SharedSlice",
+  "name": "SectionBlockHome",
+  "description": "SectionBlockHome",
+  "variations": [
+    {
+      "id": "default",
+      "name": "SectionBlockText",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "sectionSmallText": {
+          "type": "Text",
+          "config": {
+            "label": "sectionSmallText",
+            "placeholder": ""
+          }
+        },
+        "sectionHeadingText": {
+          "type": "Text",
+          "config": {
+            "label": "sectionHeadingText",
+            "placeholder": ""
+          }
+        },
+        "sectionimage": {
+          "type": "Image",
+          "config": {
+            "label": "sectionImage",
+            "constraint": {
+              "width": 0,
+              "height": null
+            },
+            "thumbnails": []
+          }
+        },
+        "sectionText": {
+          "type": "StructuredText",
+          "config": {
+            "label": "sectionText",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "reverse",
+      "name": "reverse",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "sectionSmallText": {
+          "type": "Text",
+          "config": {
+            "label": "sectionSmallText",
+            "placeholder": ""
+          }
+        },
+        "sectionHeadingText": {
+          "type": "Text",
+          "config": {
+            "label": "sectionHeadingText",
+            "placeholder": ""
+          }
+        },
+        "sectionimage": {
+          "type": "Image",
+          "config": {
+            "label": "sectionImage",
+            "constraint": {
+              "width": 0,
+              "height": null
+            },
+            "thumbnails": []
+          }
+        },
+        "sectionText": {
+          "type": "StructuredText",
+          "config": {
+            "label": "sectionText",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

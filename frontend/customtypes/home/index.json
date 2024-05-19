@@ -1,0 +1,111 @@
+{
+  "format": "page",
+  "id": "home",
+  "label": "home",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "name",
+          "placeholder": ""
+        }
+      },
+      "bannerdata": {
+        "type": "Group",
+        "config": {
+          "label": "bannerData",
+          "repeat": true,
+          "fields": {
+            "bannerVisiable": {
+              "type": "Boolean",
+              "config": {
+                "label": "bannerVisiable",
+                "default_value": false,
+                "placeholder_true": "true",
+                "placeholder_false": "false"
+              }
+            },
+            "bannerHeader": {
+              "type": "Text",
+              "config": {
+                "label": "bannerheader",
+                "placeholder": ""
+              }
+            },
+            "bannerBaragraph": {
+              "type": "Text",
+              "config": {
+                "label": "bannerParagraph",
+                "placeholder": ""
+              }
+            },
+            "bannerImage": {
+              "type": "Image",
+              "config": {
+                "label": "bannerimage",
+                "constraint": {},
+                "thumbnails": []
+              }
+            }
+          }
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "hero_section": {
+              "type": "SharedSlice"
+            },
+            "tabs_section": {
+              "type": "SharedSlice"
+            },
+            "call_to_action_email": {
+              "type": "SharedSlice"
+            },
+            "section_provided_services_home": {
+              "type": "SharedSlice"
+            },
+            "section_two_block_home": {
+              "type": "SharedSlice"
+            },
+            "section_block_home": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    },
+    "SEO & Metadata": {
+      "meta_description": {
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "A brief summary of the page"
+        },
+        "type": "Text"
+      },
+      "meta_image": {
+        "config": {
+          "constraint": {
+            "height": 1260,
+            "width": 2400
+          },
+          "label": "Meta Image",
+          "thumbnails": []
+        },
+        "type": "Image"
+      },
+      "meta_title": {
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "A title of the page used for social media and search engines"
+        },
+        "type": "Text"
+      }
+    }
+  }
+}

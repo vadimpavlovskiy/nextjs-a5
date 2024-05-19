@@ -1,0 +1,55 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"smalltext": {
+				"__TYPE__": "FieldContent",
+				"value": "practical",
+				"type": "Text"
+			},
+			"textheading": {
+				"__TYPE__": "FieldContent",
+				"value": "family",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"numbertab",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "75",
+							"type": "Number"
+						}
+					],
+					[
+						"headingtab",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "food",
+							"type": "Text"
+						}
+					],
+					[
+						"texttab",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Id et adipisicing ea cupidatat cillum anim occaecat amet in occaecat quis dolor sit sit cupidatat. Nisi proident ut aliquip velit ipsum mollit qui velit fugiat voluptate duis nulla elit. Aliqua anim cillum laboris quis officia laborum qui velit qui sunt officia nisi quis exercitation nostrud."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	}
+]

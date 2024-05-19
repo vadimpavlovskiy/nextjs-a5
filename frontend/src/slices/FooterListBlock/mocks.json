@@ -1,0 +1,38 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"footerlisttitle": {
+				"__TYPE__": "FieldContent",
+				"value": "dirty",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"linktopage",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "https://slicemachine.dev"
+							}
+						}
+					],
+					[
+						"linktext",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "struggle",
+							"type": "Text"
+						}
+					]
+				]
+			}
+		]
+	}
+]

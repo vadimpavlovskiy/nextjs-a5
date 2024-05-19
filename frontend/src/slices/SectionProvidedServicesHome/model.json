@@ -1,0 +1,49 @@
+{
+  "id": "section_provided_services_home",
+  "type": "SharedSlice",
+  "name": "SectionProvidedServicesHome",
+  "description": "SectionProvidedServicesHome",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "sectionsmalltext": {
+          "type": "Text",
+          "config": {
+            "label": "sectionsmalltext",
+            "placeholder": ""
+          }
+        },
+        "sectionheadingtext": {
+          "type": "Text",
+          "config": {
+            "label": "sectionheadingtext",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "serviceimage": {
+          "type": "Image",
+          "config": {
+            "label": "serviceImage",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "servicedescription": {
+          "type": "Text",
+          "config": {
+            "label": "serviceDescription",
+            "placeholder": ""
+          }
+        }
+      }
+    }
+  ]
+}

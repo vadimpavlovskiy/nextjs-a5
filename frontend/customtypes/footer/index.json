@@ -1,0 +1,36 @@
+{
+  "format": "custom",
+  "id": "footer",
+  "label": "footer",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "endtitletext": {
+        "type": "Text",
+        "config": {
+          "label": "EndTitleText",
+          "placeholder": ""
+        }
+      },
+      "endtextdisclaimer": {
+        "type": "Text",
+        "config": {
+          "label": "endTextDisclaimer",
+          "placeholder": ""
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "footer_list_block": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}
